@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de abogados y despachos homologados · LegalBridge">
+    <title>Catálogo de Abogados · LegalBridge</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/static.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+
+    <script src="js/catalogo.js" defer></script>
+</head>
+
+<body class="page page--catalogo">
+
+    <header class="site-header site-header--solid">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-header__brand">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrs6F1UkLZe64HQzrXzh6VkexUT0lNpz-ILEhDkJXZHMec-F0g218KvbcS4neIxQnDi79PNO8dLP0zrxdMbS1FM9CkFaq21gsZa36gBQf5z4_lKlSNUnvpmmeu_N7UzV2szb6j9gp0Lw8EMSVGZyUzVINHHTvlCihSIxLbR6kS-VDLsFS6qRJofZMkEV3DTaZg0znQtx7z9dfxdSSrVTDMn9D8eMBAFGCSrzjLp42NZ_3D0v4eT0nSmGhRAUGvT7I6Tw"
+                    alt="LegalBridge" class="site-header__logo">
+            </a>
+
+            <nav class="main-nav" aria-label="Principal">
+                <a href="catalogo.html" class="main-nav__link" aria-current="page">Abogados</a>
+                <a href="./index.html#servicios" class="main-nav__link">Servicios</a>
+                <a href="./index.html#areas-de-práctica" class="main-nav__link">Áreas de Práctica</a>
+                <a href="./index.html#abogados-destacados" class="main-nav__link">Empresas</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="login.html" class="header-actions__login">Iniciar sesión</a>
+                <a href="login.html" class="btn btn--primary btn--sm">
+                    <span class="material-symbols-outlined">balance</span>
+                    <span>Pedir Cita</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ============ HERO + BUSCADOR ============ -->
+        <section class="cat-hero">
+            <div class="cat-hero__inner">
+
+                <nav class="breadcrumb" aria-label="Migas de pan">
+                    <span>Directorio Homologado</span>
+                    <span class="material-symbols-outlined">chevron_right</span>
+                    <span class="breadcrumb__current">Catálogo de Abogados</span>
+                </nav>
+
+                <h1 class="cat-hero__title">Catálogo de Abogados y Despachos Homologados</h1>
+                <p class="cat-hero__subtitle">
+                    Encuentre y contrate letrados colegiados verificados según especialidad jurídica, rango de tarifas y
+                    disponibilidad procesal inmediata.
+                </p>
+
+                <form class="cat-search" id="cat-search" novalidate>
+                    <div class="cat-search__field cat-search__field--query">
+                        <span class="material-symbols-outlined cat-search__icon">search</span>
+                        <input type="text" class="cat-search__input" id="cat-search-query"
+                            placeholder="Buscar por nombre, especialidad, despacho o número de colegiado...">
+                    </div>
+
+                    <div class="cat-search__field cat-search__field--sort">
+                        <span class="material-symbols-outlined cat-search__icon">sort</span>
+                        <div class="cat-search__sort">
+                            <label for="cat-sort" class="cat-search__sort-label">Ordenar resultados</label>
+                            <select id="cat-sort" class="cat-search__select">
+                                <option value="rating">Mejor valorados</option>
+                                <option value="price-asc">Precio: menor a mayor</option>
+                                <option value="price-desc">Precio: mayor a menor</option>
+                                <option value="availability">Disponibilidad más próxima</option>
+                                <option value="experience">Años de colegiación</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary cat-search__submit">
+                        <span class="material-symbols-outlined">manage_search</span>
+                        <span>Buscar Letrado</span>
+                    </button>
+                </form>
+
+            </div>
+        </section>
+
+        <!-- ============ CONTENIDO: FILTROS + RESULTADOS ============ -->
+        <section class="cat-content">
+            <div class="cat-content__inner">
+
+                <!-- ===== SIDEBAR FILTROS ===== -->
+                <aside class="filters" aria-label="Filtros de búsqueda">
+                    <div class="filters__card">
+
+                        <div class="filters__head">
+                            <div class="filters__head-title">
+                                <span class="material-symbols-outlined">tune</span>
+                                <h2>Filtros Avanzados</h2>
+                            </div>
+                            <button type="button" class="filters__reset" id="reset-filters">Restablecer</button>
+                        </div>
+
+                        <!-- Grupo 1: Especialidad -->
+                        <div class="filters__group">
+                            <h3 class="filters__group-title">
+                                Especialidad Jurídica
+                                <span class="material-symbols-outlined">expand_less</span>
+                            </h3>
+                            <div class="filters__options">
+                                <label class="filter-check">
+                                    <span class="filter-check__left">
+                                        <input type="checkbox" class="filter-check__input" checked>
+                                        <span class="filter-check__label">Mercantil y Societario</span>
+                                    </span>
+                                    <span class="filter-check__count">142</span>
+                                </label>
+                                <label class="filter-check">
+                                    <span class="filter-check__left">
+                                        <input type="checkbox" class="filter-check__input">
+                                        <span class="filter-check__label">Propiedad Intelectual y Patentes</span>
+                                    </span>
+                                    <span class="filter-check__count">87</span>
+                                </label>
+                                <label class="filter-check">
+                                    <span class="filter-check__left">
+                                        <input type="checkbox" class="filter-check__input">
+                                        <span class="filter-check__label">Derecho Laboral y RRHH</span>
+                                    </span>
+                                    <span class="filter-check__count">95</span>
+                                </label>
+                                <label class="filter-check">
+                                    <span class="filter-check__left">
+                                        <input type="checkbox" class="filter-check__input">
+                                        <span class="filter-check__label">Fiscal y Tributario</span>
+                                    </span>
+                                    <span class="filter-check__count">110</span>
+                                </label>
+                                <label class="filter-check">
+                                    <span class="filter-check__left">
+                                        <input type="checkbox" class="filter-check__input">
+                                        <span class="filter-check__label">Civil y Contratos</span>
+                                    </span>
+                                    <span class="filter-check__count">128</span>
+                                </label>
+                                <label class="filter-check">
+                                    <span class="filter-check__left">
+                                        <input type="checkbox" class="filter-check__input">
+                                        <span class="filter-check__label">Penal Económico &amp; Compliance</span>
+                                    </span>
+                                    <span class="filter-check__count">64</span>
+                                </label>
+                                <label class="filter-check">
+                                    <span class="filter-check__left">
+                                        <input type="checkbox" class="filter-check__input">
+                                        <span class="filter-check__label">Inmobiliario y Urbanístico</span>
+                                    </span>
+                                    <span class="filter-check__count">53</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <hr class="filters__divider">
+
+                        <!-- Grupo 2: Honorarios -->
+                        <div class="filters__group">
+                            <h3 class="filters__group-title">Honorarios por Consulta</h3>
+                            <div class="filters__options">
+                                <label class="filter-radio">
+                                    <input type="radio" name="price_range" class="filter-radio__input" checked>
+                                    <span class="filter-radio__label">Todos los rangos</span>
+                                </label>
+                                <label class="filter-radio">
+                                    <input type="radio" name="price_range" class="filter-radio__input">
+                                    <span class="filter-radio__label">Hasta 100 € / consulta</span>
+                                </label>
+                                <label class="filter-radio">
+                                    <input type="radio" name="price_range" class="filter-radio__input">
+                                    <span class="filter-radio__label">100 € – 200 € / consulta</span>
+                                </label>
+                                <label class="filter-radio">
+                                    <input type="radio" name="price_range" class="filter-radio__input">
+                                    <span class="filter-radio__label">Más de 200 € / consulta</span>
+                                </label>
+                            </div>
+                            <label class="filter-checkbox-box">
+                                <input type="checkbox" class="filter-checkbox-box__input">
+                                <span class="filter-checkbox-box__label">Primera consulta orientativa sin compromiso (15
+                                    min)</span>
+                            </label>
+                        </div>
+
+                        <hr class="filters__divider">
+
+                        <!-- Grupo 3: Valoración -->
+                        <div class="filters__group">
+                            <h3 class="filters__group-title">Valoración Mínima</h3>
+                            <div class="filters__options">
+                                <label class="filter-rating">
+                                    <span class="filter-rating__left">
+                                        <input type="radio" name="rating" class="filter-radio__input" checked>
+                                        <span class="material-symbols-outlined filter-rating__star">star</span>
+                                        <span class="filter-rating__value">4.9 – 5.0</span>
+                                    </span>
+                                    <span class="filter-rating__hint">Excelente</span>
+                                </label>
+                                <label class="filter-rating">
+                                    <span class="filter-rating__left">
+                                        <input type="radio" name="rating" class="filter-radio__input">
+                                        <span class="material-symbols-outlined filter-rating__star">star</span>
+                                        <span class="filter-rating__value">4.5 o más</span>
+                                    </span>
+                                    <span class="filter-rating__hint">Muy bueno</span>
+                                </label>
+                                <label class="filter-rating">
+                                    <span class="filter-rating__left">
+                                        <input type="radio" name="rating" class="filter-radio__input">
+                                        <span class="material-symbols-outlined filter-rating__star">star</span>
+                                        <span class="filter-rating__value">4.0 o más</span>
+                                    </span>
+                                    <span class="filter-rating__hint">Recomendado</span>
+                                </label>
+                            </div>
+                            <p class="filters__note">
+                                <span class="material-symbols-outlined">verified_user</span>
+                                Todas las valoraciones son auditadas vía firma telemática
+                            </p>
+                        </div>
+
+                        <hr class="filters__divider">
+
+                        <!-- Grupo 4: Disponibilidad -->
+                        <div class="filters__group">
+                            <h3 class="filters__group-title">Disponibilidad Procesal</h3>
+                            <div class="filters__options">
+                                <label class="filter-radio">
+                                    <input type="checkbox" class="filter-radio__input">
+                                    <span class="filter-radio__label">Hoy mismo (Urgencias)</span>
+                                </label>
+                                <label class="filter-radio">
+                                    <input type="checkbox" class="filter-radio__input" checked>
+                                    <span class="filter-radio__label">Esta semana</span>
+                                </label>
+                                <label class="filter-radio">
+                                    <input type="checkbox" class="filter-radio__input">
+                                    <span class="filter-radio__label">En 24 – 48 horas</span>
+                                </label>
+                                <label class="filter-radio">
+                                    <input type="checkbox" class="filter-radio__input">
+                                    <span class="filter-radio__label">Próxima semana</span>
+                                </label>
+                            </div>
+
+                            <p class="filters__channel-label">Canal de Consulta</p>
+                            <div class="filters__channel-grid">
+                                <button type="button" class="channel-btn channel-btn--active">
+                                    <span class="material-symbols-outlined">videocam</span>
+                                    <span>Telemática</span>
+                                </button>
+                                <button type="button" class="channel-btn">
+                                    <span class="material-symbols-outlined">corporate_fare</span>
+                                    <span>Presencial</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn--primary btn--block" id="apply-filters">
+                            <span class="material-symbols-outlined">filter_alt</span>
+                            <span>Aplicar Filtros</span>
+                        </button>
+
+                    </div>
+
+                    <!-- Trust card -->
+                    <div class="trust-card">
+                        <span class="material-symbols-outlined trust-card__icon">policy</span>
+                        <div>
+                            <span class="trust-card__title">Garantía Colegial</span>
+                            <p class="trust-card__text">
+                                Cada letrado publicado cuenta con seguro de responsabilidad civil vigente y homologación
+                                ante el Consejo General de la Abogacía Española.
+                            </p>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- ===== RESULTADOS ===== -->
+                <section class="results" aria-label="Resultados">
+
+                    <header class="results__bar">
+                        <div>
+                            <p class="results__count">Mostrando 48 abogados disponibles</p>
+                            <p class="results__subtitle">Jurisdicción de Madrid, ámbito nacional y asesoría telemática
+                                encriptada</p>
+                        </div>
+                        <div class="results__pills">
+                            <button type="button" class="pill">
+                                Mercantil
+                                <span class="material-symbols-outlined">close</span>
+                            </button>
+                            <button type="button" class="pill">
+                                4.5+ Estrellas
+                                <span class="material-symbols-outlined">close</span>
+                            </button>
+                            <button type="button" class="pill">
+                                Esta semana
+                                <span class="material-symbols-outlined">close</span>
+                            </button>
+                        </div>
+                    </header>
+
+                    <div class="results__list">
+
+                        <!-- Card 1 -->
+                        <article class="lawyer-row">
+                            <span class="lawyer-row__accent lawyer-row__accent--tertiary"></span>
+                            <div class="lawyer-row__top">
+                                <div class="lawyer-row__photo-wrap">
+                                    <div class="lawyer-row__photo">
+                                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWOs77OQbgwfhpFCom5APJYOefIVjnseDNSi6O_gLivLTtIKPWPx0phHGn8OhoskZMUCJLOGmMmNyTfYWL7nuHAdoHsqA7Ikb9xEGuUELsaXI8_OtgyMWwM5OgP2DMC-_xz_-CwJ_BX_1HR-hxmgp8Q9nKotR__uFtOxlUarimCrZH3YAeN9hxGBySLcLhaake0QwMYu_q4fa5-NoEJxbkmeIN7iU0YlQqJ-3K5VTjQm7chVJCywZv"
+                                            alt="Dña. Elena Garrido Ramos">
+                                        <span class="lawyer-row__years">18 Años Ej.</span>
+                                    </div>
+                                    <div class="lawyer-row__rating">
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="lawyer-row__rating-value">4.9</span>
+                                        <span class="lawyer-row__rating-count">(124)</span>
+                                    </div>
+                                </div>
+
+                                <div class="lawyer-row__body">
+                                    <div class="lawyer-row__head">
+                                        <h3 class="lawyer-row__name">Dña. Elena Garrido Ramos</h3>
+                                        <div class="lawyer-row__tags">
+                                            <span class="badge badge--tertiary">
+                                                <span class="material-symbols-outlined">verified</span>
+                                                Top Valorado
+                                            </span>
+                                            <span class="badge badge--neutral">Letrado Verificado 2FA</span>
+                                        </div>
+                                    </div>
+                                    <p class="lawyer-row__specialty">Derecho Mercantil, M&amp;A y Reestructuración
+                                        Societaria</p>
+                                    <ul class="lawyer-row__meta">
+                                        <li>
+                                            <span class="material-symbols-outlined">badge</span>
+                                            Colegiada ICAM 48.912
+                                        </li>
+                                        <li>
+                                            <span class="material-symbols-outlined">location_on</span>
+                                            Despacho en Calle Serrano, Madrid
+                                        </li>
+                                        <li>
+                                            <span class="material-symbols-outlined">language</span>
+                                            Español, Inglés (C2)
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="lawyer-row__footer">
+                                <div class="lawyer-row__footer-left">
+                                    <span class="slot slot--available">
+                                        <span class="slot__dot"></span>
+                                        Hoy a las 16:30 h
+                                    </span>
+                                    <div class="lawyer-row__price">
+                                        <span class="lawyer-row__price-main">150 €</span>
+                                        <span class="lawyer-row__price-note">/ consulta inicial</span>
+                                        <span class="lawyer-row__price-extra">(80 €/h recurrente)</span>
+                                    </div>
+                                </div>
+                                <div class="lawyer-row__footer-right">
+                                    <button type="button" class="btn btn--outline btn--sm">Ver Perfil y Casos</button>
+                                    <button type="button" class="btn btn--tertiary btn--sm">
+                                        <span class="material-symbols-outlined">calendar_month</span>
+                                        Reservar Cita
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="lawyer-row">
+                            <span class="lawyer-row__accent lawyer-row__accent--primary"></span>
+                            <div class="lawyer-row__top">
+                                <div class="lawyer-row__photo-wrap">
+                                    <div class="lawyer-row__photo">
+                                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1JyOs-ULEbhsuH5Svtb0cBREMEklxhl2Fs18iizJX0NdLFQW7NMmXam9SkBAAuU3LQISYl3vgk7-Pp7kGlNSLn3McwxH6EfRqXNeBt0EXg0-NqR5bkD51g45Rm3G47xUae_sEfnk5BkR4e1SS-FKjPiGZkhMYSoRbWdYtTv33_fXT9P4chocCannz0pAQQxcLvQUwbl7DGDe06ynUZbB8XBBMsEplxyBSTq9DUOJJMeA3crOGLkLZ"
+                                            alt="D. Carlos Mendoza Benítez">
+                                        <span class="lawyer-row__years">14 Años Ej.</span>
+                                    </div>
+                                    <div class="lawyer-row__rating">
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="lawyer-row__rating-value">5.0</span>
+                                        <span class="lawyer-row__rating-count">(98)</span>
+                                    </div>
+                                </div>
+
+                                <div class="lawyer-row__body">
+                                    <div class="lawyer-row__head">
+                                        <h3 class="lawyer-row__name">D. Carlos Mendoza Benítez</h3>
+                                        <div class="lawyer-row__tags">
+                                            <span class="badge badge--secondary">
+                                                <span class="material-symbols-outlined">military_tech</span>
+                                                Especialista LegalTech Certificado
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p class="lawyer-row__specialty">Propiedad Intelectual, Software, Patentes y Marcas
+                                        OEPM</p>
+                                    <ul class="lawyer-row__meta">
+                                        <li>
+                                            <span class="material-symbols-outlined">badge</span>
+                                            Colegiado ICAB 31.045
+                                        </li>
+                                        <li>
+                                            <span class="material-symbols-outlined">devices</span>
+                                            Soporte Pericial Código y Blockchain
+                                        </li>
+                                        <li>
+                                            <span class="material-symbols-outlined">forum</span>
+                                            100% Asesoría Digital Remota
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="lawyer-row__footer">
+                                <div class="lawyer-row__footer-left">
+                                    <span class="slot slot--soon">
+                                        <span class="material-symbols-outlined">schedule</span>
+                                        Mañana a las 10:00 h
+                                    </span>
+                                    <div class="lawyer-row__price">
+                                        <span class="lawyer-row__price-main">180 €</span>
+                                        <span class="lawyer-row__price-note">/ consulta inicial telemática</span>
+                                    </div>
+                                </div>
+                                <div class="lawyer-row__footer-right">
+                                    <button type="button" class="btn btn--outline btn--sm">Ver Perfil</button>
+                                    <button type="button" class="btn btn--primary btn--sm">
+                                        <span class="material-symbols-outlined">calendar_month</span>
+                                        Reservar Cita
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Card 3 -->
+                        <article class="lawyer-row">
+                            <span class="lawyer-row__accent lawyer-row__accent--secondary"></span>
+                            <div class="lawyer-row__top">
+                                <div class="lawyer-row__photo-wrap">
+                                    <div class="lawyer-row__photo">
+                                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeG3HNhoQYZKMC5iRFk7tOCHN8tyT9OsPzYGBCfi-yVMF3_d1VRrrOXjBQg2H0-e3JooOBCS-6MOsi0Xhe3GXFKHf8OzTk8mom8657aYZ7V72pLIgYQ1zCKyGVBFO5O7IrumaZg8oBnjv6Jiu5pAIKV1kwRbq3jiP-2hdH-IEoRUQg_p1bBXNgWOMS15CmEhCJJpPJzGTGQ0WUVWSkZT0CBTwUNN8rJ6uyRXWK9mq_vMb3aKxxOJxF"
+                                            alt="Dña. Lucía Santamaría Ortiz">
+                                        <span class="lawyer-row__years">11 Años Ej.</span>
+                                    </div>
+                                    <div class="lawyer-row__rating">
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="lawyer-row__rating-value">4.8</span>
+                                        <span class="lawyer-row__rating-count">(86)</span>
+                                    </div>
+                                </div>
+
+                                <div class="lawyer-row__body">
+                                    <div class="lawyer-row__head">
+                                        <h3 class="lawyer-row__name">Dña. Lucía Santamaría Ortiz</h3>
+                                        <div class="lawyer-row__tags">
+                                            <span class="badge badge--neutral">
+                                                <span class="material-symbols-outlined">gavel</span>
+                                                Penal Corporativo
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p class="lawyer-row__specialty">Compliance Penal, Responsabilidad Penal Corporativa
+                                        y RGPD</p>
+                                    <ul class="lawyer-row__meta">
+                                        <li>
+                                            <span class="material-symbols-outlined">badge</span>
+                                            Colegiada ICAM 54.210
+                                        </li>
+                                        <li>
+                                            <span class="material-symbols-outlined">security</span>
+                                            Perito en Canales Éticos
+                                        </li>
+                                        <li>
+                                            <span class="material-symbols-outlined">balance</span>
+                                            Audiencia Nacional &amp; Juzgados Centrales
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="lawyer-row__footer">
+                                <div class="lawyer-row__footer-left">
+                                    <span class="slot slot--available">
+                                        <span class="slot__dot"></span>
+                                        Hoy a las 18:00 h
+                                    </span>
+                                    <div class="lawyer-row__price">
+                                        <span class="lawyer-row__price-main">130 €</span>
+                                        <span class="lawyer-row__price-note">/ consulta técnica</span>
+                                    </div>
+                                </div>
+                                <div class="lawyer-row__footer-right">
+                                    <button type="button" class="btn btn--outline btn--sm">Ver Perfil</button>
+                                    <button type="button" class="btn btn--primary btn--sm">
+                                        <span class="material-symbols-outlined">calendar_month</span>
+                                        Reservar Cita
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Card 4 -->
+                        <article class="lawyer-row">
+                            <span class="lawyer-row__accent lawyer-row__accent--primary-dark"></span>
+                            <div class="lawyer-row__top">
+                                <div class="lawyer-row__photo-wrap">
+                                    <div class="lawyer-row__photo">
+                                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH0WP4uJsqhCveJmWKWjsO_HHcewljN2NScSkZ0v67S9ir_bWvRzfxqgd6wEHMzWBsvIAq7c_NTTY-g2jderFA7yU87awo3Zeyk2fEyDZ68SSkmoeEON_fDgQA_aHhvrRLiuT6GiZ3nH-JX6haT27xsmmW3DAmI62hRNQFyeAAFBwlYhhrd4JocUFD69__izruHZihMXDCUxL5msfPW83uVNxqJXVn5kOJe7UxArJNj2t878Bw7is0"
+                                            alt="D. Javier De la Peña Gómez">
+                                        <span class="lawyer-row__years">20 Años Ej.</span>
+                                    </div>
+                                    <div class="lawyer-row__rating">
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="lawyer-row__rating-value">4.9</span>
+                                        <span class="lawyer-row__rating-count">(140)</span>
+                                    </div>
+                                </div>
+
+                                <div class="lawyer-row__body">
+                                    <div class="lawyer-row__head">
+                                        <h3 class="lawyer-row__name">D. Javier De la Peña Gómez</h3>
+                                        <div class="lawyer-row__tags">
+                                            <span class="badge badge--primary">
+                                                <span class="material-symbols-outlined">account_balance</span>
+                                                Ex-Inspector Tributario en excedencia
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p class="lawyer-row__specialty">Fiscalidad Internacional, Operaciones Vinculadas y
+                                        Corporate Tax</p>
+                                    <ul class="lawyer-row__meta">
+                                        <li>
+                                            <span class="material-symbols-outlined">badge</span>
+                                            Colegiado ICAV 28.774
+                                        </li>
+                                        <li>
+                                            <span class="material-symbols-outlined">domain</span>
+                                            Despacho en Paseo de la Castellana
+                                        </li>
+                                        <li>
+                                            <span class="material-symbols-outlined">public</span>
+                                            Tributación Transfronteriza UE – LatAm
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="lawyer-row__footer">
+                                <div class="lawyer-row__footer-left">
+                                    <span class="slot slot--soon">
+                                        <span class="material-symbols-outlined">event</span>
+                                        Jueves 24 Octubre
+                                    </span>
+                                    <div class="lawyer-row__price">
+                                        <span class="lawyer-row__price-main">210 €</span>
+                                        <span class="lawyer-row__price-note">/ consulta de dictamen</span>
+                                    </div>
+                                </div>
+                                <div class="lawyer-row__footer-right">
+                                    <button type="button" class="btn btn--outline btn--sm">Ver Perfil</button>
+                                    <button type="button" class="btn btn--primary btn--sm">
+                                        <span class="material-symbols-outlined">calendar_month</span>
+                                        Reservar Cita
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Card 5 -->
+                        <article class="lawyer-row">
+                            <span class="lawyer-row__accent lawyer-row__accent--muted"></span>
+                            <div class="lawyer-row__top">
+                                <div class="lawyer-row__photo-wrap">
+                                    <div class="lawyer-row__photo">
+                                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq2tfhgXMFAGq1nz8zvHRvWovj_kGgc4tiZfFjW8SXXA1QsOiv6ezrSxJxYRUyvOYOE3dT8g3yS174sapBYtyq9tE2dshhAQPvcC52zG_y9oLGEJ2WIgdd-pSaU4EMKJez7SZvEpAPyvUyjrXcpjRTShQFmVhY32yZQqjDk_CauuD7-Kt6wbWDwNM6j-HAvPYq78rmyIIMa7K8BCPRFaVwGcFKomJTn1y9LM1ti1DjEVc3HGch0xSj"
+                                            alt="Dña. Marta Vega Alarcón">
+                                        <span class="lawyer-row__years">9 Años Ej.</span>
+                                    </div>
+                                    <div class="lawyer-row__rating">
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="lawyer-row__rating-value">4.7</span>
+                                        <span class="lawyer-row__rating-count">(65)</span>
+                                    </div>
+                                </div>
+
+                                <div class="lawyer-row__body">
+                                    <div class="lawyer-row__head">
+                                        <h3 class="lawyer-row__name">Dña. Marta Vega Alarcón</h3>
+                                        <div class="lawyer-row__tags">
+                                            <span class="badge badge--neutral">
+                                                <span class="material-symbols-outlined">groups</span>
+                                                Negociación Colectiva
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p class="lawyer-row__specialty">Derecho Laboral Corporativo, Reestructuraciones y
+                                        EREs</p>
+                                    <ul class="lawyer-row__meta">
+                                        <li>
+                                            <span class="material-symbols-outlined">badge</span>
+                                            Colegiada ICAM 62.119
+                                        </li>
+                                        <li>
+                                            <span class="material-symbols-outlined">handshake</span>
+                                            Mediadora Certificada SIMA
+                                        </li>
+                                        <li>
+                                            <span class="material-symbols-outlined">schedule</span>
+                                            Atención Urgente Conciliaciones SMAC
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="lawyer-row__footer">
+                                <div class="lawyer-row__footer-left">
+                                    <span class="slot slot--soon">
+                                        <span class="material-symbols-outlined">event</span>
+                                        Viernes 25 Octubre
+                                    </span>
+                                    <div class="lawyer-row__price">
+                                        <span class="lawyer-row__price-main">110 €</span>
+                                        <span class="lawyer-row__price-note">/ consulta laboral</span>
+                                    </div>
+                                </div>
+                                <div class="lawyer-row__footer-right">
+                                    <button type="button" class="btn btn--outline btn--sm">Ver Perfil</button>
+                                    <button type="button" class="btn btn--primary btn--sm">
+                                        <span class="material-symbols-outlined">calendar_month</span>
+                                        Reservar Cita
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <!-- Paginación -->
+                    <nav class="pagination" aria-label="Paginación">
+                        <button type="button" class="pagination__nav" disabled>
+                            <span class="material-symbols-outlined">chevron_left</span>
+                            <span>Anterior</span>
+                        </button>
+                        <div class="pagination__pages">
+                            <button type="button" class="pagination__page pagination__page--active"
+                                aria-current="page">1</button>
+                            <button type="button" class="pagination__page">2</button>
+                            <button type="button" class="pagination__page">3</button>
+                            <span class="pagination__ellipsis">…</span>
+                            <button type="button" class="pagination__page">8</button>
+                        </div>
+                        <button type="button" class="pagination__nav">
+                            <span>Siguiente</span>
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </nav>
+
+                    <!-- Footnote -->
+                    <aside class="security-note">
+                        <div class="security-note__left">
+                            <span class="material-symbols-outlined security-note__icon">lock</span>
+                            <span>Contratación asegurada mediante protocolo escrow y firma electrónica cualificada
+                                eIDAS.</span>
+                        </div>
+                        <a href="#" class="security-note__link">
+                            Saber más sobre garantías LegalBridge
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </aside>
+
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer site-footer--minimal">
+        <div class="site-footer__inner">
+            <div class="site-footer__brand">
+                <img src="https://lh3.googleusercontent.com/aida/AEtjO1Wlt1bu4mJFzh5Lk3WTnVD92vXyGHL9HLu0VVl3nA_r290V57tc3D5e0Q3KPcwa3kDYBanZyg_ExwisSLZtgdpYlFixGh90QzytrjZtjgAqm0MLRN3sok-eZAS4-hJ7YkI26d3CC--KXXiGkZtHbNH-rhkfskXD8hKDOqszzOvDULHJLfCpwfXTKSjtntSrvpwEBW2OddlBs2sEZuSyrjhtcf5kKVgxGnYqhpz-_S0NczYTHeQCEbp8wmaDiB_lLev96M_Ku9fJvA"
+                    alt="LegalBridge" class="site-footer__logo">
+                <span class="site-footer__copy">© 2024 LegalBridge. Todos los derechos reservados.</span>
+            </div>
+            <nav class="site-footer__nav" aria-label="Enlaces legales">
+                <a href="#">Aviso Legal</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Términos</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+
+</html>

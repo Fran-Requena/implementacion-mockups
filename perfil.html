@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfil de usuario · LegalBridge">
+    <title>Mi Perfil · LegalBridge</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/static.css">
+    <link rel="stylesheet" href="css/perfil.css">
+
+    <script src="js/perfil.js" defer></script>
+</head>
+
+<body class="page page--perfil">
+
+    <header class="site-header site-header--solid">
+        <div class="site-header__inner">
+            <div class="site-header__brand-wrap">
+                <a href="index.html" class="site-header__brand">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVwrNBSBG4vLlaB5kT4tgtAsAcU1CiHMhLMz2LCpbfbo5o5F5jhP1iqf-RvGU3XAAy0_KekJVJSzSzB8InJCih2kQOuDNoL7ClmFP3m1CB2nWzZHLpc5nqSjzTMPQaegjFXr4X5iMjUhCRkB4xJHUALdQMvgwN6xJP7mLEMbRGf_Oo1Dz2mgdgVs7vAOdjW2G8J6J5iQpAaQaa-vB37bbAZhRGY6TTuZ9Hu5HuYMG3Gywfa1QCK0Ia4MXI6Qo7CJofYg"
+                        alt="LegalBridge" class="site-header__logo">
+                </a>
+
+                <nav class="main-nav" aria-label="Principal">
+                    <a href="index.html" class="main-nav__link">Inicio</a>
+                    <a href="#" class="main-nav__link">Servicios</a>
+                    <a href="#" class="main-nav__link">Mis Consultas</a>
+                    <a href="perfil.html" class="main-nav__link" aria-current="page">Mi Perfil</a>
+                </nav>
+            </div>
+
+            <div class="header-user">
+                <button type="button" class="header-user__bell" aria-label="Notificaciones">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="header-user__bell-dot" aria-hidden="true"></span>
+                </button>
+
+                <a href="perfil.html" class="header-user__info">
+                    <span class="header-user__name">Alejandro Morales</span>
+                    <span class="header-user__company">TechVentures SL</span>
+                </a>
+
+                <a href="perfil.html" class="header-user__avatar" title="Alejandro Morales">
+                    AM
+                    <span class="header-user__avatar-dot" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile">
+        <div class="profile__inner">
+
+            <!-- ============ CABECERA DEL PERFIL ============ -->
+            <section class="profile-hero" aria-labelledby="profile-name">
+                <div class="profile-hero__left">
+                    <div class="profile-hero__avatar">
+                        AM
+                        <span class="profile-hero__avatar-badge" title="Cuenta verificada">
+                            <span class="material-symbols-outlined">check</span>
+                        </span>
+                    </div>
+
+                    <div class="profile-hero__info">
+                        <div class="profile-hero__badges">
+                            <h1 id="profile-name" class="profile-hero__name">Alejandro Morales Valero</h1>
+                            <span class="badge badge--verified">
+                                <span class="material-symbols-outlined">verified</span>
+                                Identidad Verificada 2FA
+                            </span>
+                            <span class="badge badge--neutral">CIF: B-88492019</span>
+                        </div>
+                        <p class="profile-hero__company">
+                            TechVentures Consulting S.L. ·
+                            <span class="profile-hero__company-tag">Cliente Corporativo Verificado</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="profile-hero__actions">
+                    <button type="button" class="btn btn--outline">
+                        <span class="material-symbols-outlined">edit_note</span>
+                        <span>Editar Perfil</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- ============ TABS ============ -->
+            <nav class="tabs" role="tablist" aria-label="Secciones del perfil">
+                <button type="button" class="tab-trigger tab-trigger--active" id="tab-btn-empresa" role="tab"
+                    aria-selected="true" aria-controls="tab-empresa" data-tab="empresa">
+                    <span class="material-symbols-outlined">business</span>
+                    Datos Personales &amp; Empresa
+                </button>
+                <button type="button" class="tab-trigger" id="tab-btn-documentos" role="tab" aria-selected="false"
+                    aria-controls="tab-documentos" data-tab="documentos">
+                    <span class="material-symbols-outlined">folder_special</span>
+                    Documentos y Contratos
+                </button>
+                <button type="button" class="tab-trigger" id="tab-btn-pagos" role="tab" aria-selected="false"
+                    aria-controls="tab-pagos" data-tab="pagos">
+                    <span class="material-symbols-outlined">credit_card</span>
+                    Métodos de Pago
+                </button>
+                <button type="button" class="tab-trigger" id="tab-btn-abogados" role="tab" aria-selected="false"
+                    aria-controls="tab-abogados" data-tab="abogados">
+                    <span class="material-symbols-outlined">stars</span>
+                    Abogados Favoritos
+                </button>
+                <button type="button" class="tab-trigger" id="tab-btn-historial" role="tab" aria-selected="false"
+                    aria-controls="tab-historial" data-tab="historial">
+                    <span class="material-symbols-outlined">history_edu</span>
+                    Historial de Consultas
+                </button>
+            </nav>
+
+            <!-- ============ PANELES ============ -->
+            <div class="profile-panels">
+
+                <!-- ===== PANEL: EMPRESA ===== -->
+                <section class="profile-panel" id="tab-empresa" role="tabpanel" aria-labelledby="tab-btn-empresa">
+                    <div class="panel-grid">
+
+                        <div class="card card--lg">
+                            <header class="card__header">
+                                <div>
+                                    <h2 class="card__title">Información General &amp; Fiscal</h2>
+                                    <p class="card__subtitle">Datos mercantiles validados para emisión de dictámenes y
+                                        mandatos procesales.</p>
+                                </div>
+                                <span class="material-symbols-outlined card__icon">gavel</span>
+                            </header>
+
+                            <form class="profile-form" id="profile-form" novalidate>
+                                <div class="form-field form-field--full">
+                                    <label class="form-field__label" for="razon-social">Razón Social</label>
+                                    <input class="form-field__input form-field__input--dense" id="razon-social"
+                                        type="text" value="TechVentures Consulting S.L.">
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-field__label" for="cif-nif">NIF / CIF Corporativo</label>
+                                    <input class="form-field__input form-field__input--dense" id="cif-nif" type="text"
+                                        value="B-88492019">
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-field__label" for="telefono">Teléfono de Contacto</label>
+                                    <input class="form-field__input form-field__input--dense" id="telefono" type="tel"
+                                        value="+34 912 345 678">
+                                </div>
+
+                                <div class="form-field form-field--full">
+                                    <label class="form-field__label" for="email-fiscal">Correo Electrónico
+                                        Verificado</label>
+                                    <div class="form-field__with-icon">
+                                        <input class="form-field__input form-field__input--dense" id="email-fiscal"
+                                            type="email" value="a.morales@techventures.es">
+                                        <span class="material-symbols-outlined form-field__icon-ok">check_circle</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-field form-field--full">
+                                    <label class="form-field__label" for="direccion">Domicilio Fiscal Registrado</label>
+                                    <input class="form-field__input form-field__input--dense" id="direccion" type="text"
+                                        value="Paseo de la Castellana 140, 6ºB, Madrid">
+                                </div>
+
+                                <div class="profile-form__footer">
+                                    <span class="profile-form__toast" id="saved-toast" role="status" aria-live="polite">
+                                        <span class="material-symbols-outlined">done</span>
+                                        Cambios sincronizados con la secretaría técnica
+                                    </span>
+                                    <button type="submit" class="btn btn--primary">
+                                        Guardar Cambios
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <aside class="panel-sidebar">
+                            <div class="card">
+                                <h3 class="card__title">Representación Jurídica</h3>
+                                <div class="info-block">
+                                    <span class="info-block__label">Poderdante Facultado</span>
+                                    <span class="info-block__value">Alejandro Morales Valero</span>
+                                    <span class="info-block__hint">Administrador Mancomunado / Notaría
+                                        Ruiz-Gallardón</span>
+                                </div>
+                                <div class="info-block">
+                                    <span class="info-block__label">Jurisdicción Preferente</span>
+                                    <span class="info-block__value">Comunidad de Madrid</span>
+                                    <span class="info-block__hint">Tribunales de lo Mercantil de Madrid Capital</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <h3 class="card__title">Seguridad &amp; Secreto Profesional</h3>
+                                <p class="card__text">
+                                    Sus comunicaciones y archivos procesales están cifrados conforme a la directiva de
+                                    secreto profesional letrado.
+                                </p>
+                                <div class="card__footer-note">
+                                    <span class="material-symbols-outlined">lock</span>
+                                    Protocolo AES-256 Activo
+                                </div>
+                            </div>
+                        </aside>
+
+                    </div>
+                </section>
+
+                <!-- ===== PANEL: DOCUMENTOS ===== -->
+                <section class="profile-panel profile-panel--hidden" id="tab-documentos" role="tabpanel"
+                    aria-labelledby="tab-btn-documentos">
+                    <div class="card card--lg">
+                        <header class="card__header">
+                            <div>
+                                <h2 class="card__title">Bóveda Documental Segura</h2>
+                                <p class="card__subtitle">Expedientes corporativos custodiados bajo certificación
+                                    electrónica de fe pública.</p>
+                            </div>
+                            <button type="button" class="btn btn--outline">
+                                <span class="material-symbols-outlined">upload_file</span>
+                                Subir Documento
+                            </button>
+                        </header>
+
+                        <div class="documents-grid">
+
+                            <article class="document-card">
+                                <div class="document-card__top">
+                                    <div class="document-card__icon">
+                                        <span class="material-symbols-outlined">picture_as_pdf</span>
+                                    </div>
+                                    <span class="badge badge--verified">Verificado</span>
+                                </div>
+                                <div>
+                                    <h4 class="document-card__name">Poder Notarial Bastanteado.pdf</h4>
+                                    <p class="document-card__meta">1.4 MB · Actualizado hace 4 meses</p>
+                                </div>
+                                <div class="document-card__actions">
+                                    <button type="button" class="btn btn--outline btn--sm document-card__view">
+                                        <span class="material-symbols-outlined">visibility</span>
+                                        Ver
+                                    </button>
+                                    <button type="button" class="document-card__download"
+                                        title="Descargar copia auténtica">
+                                        <span class="material-symbols-outlined">download</span>
+                                    </button>
+                                </div>
+                            </article>
+
+                            <article class="document-card">
+                                <div class="document-card__top">
+                                    <div class="document-card__icon">
+                                        <span class="material-symbols-outlined">encrypted</span>
+                                    </div>
+                                    <span class="badge badge--encrypted">Cifrado</span>
+                                </div>
+                                <div>
+                                    <h4 class="document-card__name">Estatutos Sociales 2023.pdf</h4>
+                                    <p class="document-card__meta">3.8 MB · Protocolo de Fundación</p>
+                                </div>
+                                <div class="document-card__actions">
+                                    <button type="button" class="btn btn--outline btn--sm document-card__view">
+                                        <span class="material-symbols-outlined">visibility</span>
+                                        Ver
+                                    </button>
+                                    <button type="button" class="document-card__download"
+                                        title="Descargar copia auténtica">
+                                        <span class="material-symbols-outlined">download</span>
+                                    </button>
+                                </div>
+                            </article>
+
+                            <article class="document-card">
+                                <div class="document-card__top">
+                                    <div class="document-card__icon">
+                                        <span class="material-symbols-outlined">history_edu</span>
+                                    </div>
+                                    <span class="badge badge--signed">Firmado</span>
+                                </div>
+                                <div>
+                                    <h4 class="document-card__name">Acuerdo Confidencialidad NDA.pdf</h4>
+                                    <p class="document-card__meta">420 KB · Firma Cualificada eIDAS</p>
+                                </div>
+                                <div class="document-card__actions">
+                                    <button type="button" class="btn btn--outline btn--sm document-card__view">
+                                        <span class="material-symbols-outlined">visibility</span>
+                                        Ver
+                                    </button>
+                                    <button type="button" class="document-card__download"
+                                        title="Descargar copia auténtica">
+                                        <span class="material-symbols-outlined">download</span>
+                                    </button>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== PANEL: PAGOS ===== -->
+                <section class="profile-panel profile-panel--hidden" id="tab-pagos" role="tabpanel"
+                    aria-labelledby="tab-btn-pagos">
+                    <div class="card card--lg">
+                        <header class="card__header">
+                            <div>
+                                <h2 class="card__title">Gestión Financiera &amp; Honorarios</h2>
+                                <p class="card__subtitle">Sistemas de provisión de fondos y facturación mercantil
+                                    recurrente.</p>
+                            </div>
+                            <div class="card__header-actions">
+                                <button type="button" class="btn btn--outline">
+                                    <span class="material-symbols-outlined">receipt_long</span>
+                                    Descargar últimas facturas
+                                </button>
+                                <button type="button" class="btn btn--primary">
+                                    <span class="material-symbols-outlined">add</span>
+                                    Añadir método
+                                </button>
+                            </div>
+                        </header>
+
+                        <div class="payment-grid">
+
+                            <article class="payment-card">
+                                <div class="payment-card__top">
+                                    <div class="payment-card__brand">
+                                        <div class="payment-card__brand-icon">
+                                            <span class="material-symbols-outlined">credit_card</span>
+                                        </div>
+                                        <div>
+                                            <span class="payment-card__name">Visa Corporativa Platinum</span>
+                                            <p class="payment-card__owner">TechVentures Consulting</p>
+                                        </div>
+                                    </div>
+                                    <span class="badge badge--verified">Principal</span>
+                                </div>
+                                <div class="payment-card__bottom">
+                                    <span class="payment-card__number">•••• •••• •••• 4821</span>
+                                    <span class="payment-card__expiry">Caduca 09/27</span>
+                                </div>
+                            </article>
+
+                            <article class="payment-card">
+                                <div class="payment-card__top">
+                                    <div class="payment-card__brand">
+                                        <div class="payment-card__brand-icon payment-card__brand-icon--alt">
+                                            <span class="material-symbols-outlined">account_balance</span>
+                                        </div>
+                                        <div>
+                                            <span class="payment-card__name">Domiciliación Bancaria SEPA B2B</span>
+                                            <p class="payment-card__owner">Banco Santander Central Hispano</p>
+                                        </div>
+                                    </div>
+                                    <span class="badge badge--neutral">Mandato Activo</span>
+                                </div>
+                                <div class="payment-card__bottom">
+                                    <span class="payment-card__number">ES91 0049 •••• •••• 8291</span>
+                                    <span class="payment-card__expiry payment-card__expiry--ok">Verificado</span>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== PANEL: ABOGADOS FAVORITOS ===== -->
+                <section class="profile-panel profile-panel--hidden" id="tab-abogados" role="tabpanel"
+                    aria-labelledby="tab-btn-abogados">
+                    <div class="card card--lg">
+                        <header class="card__header">
+                            <div>
+                                <h2 class="card__title">Abogados de Confianza Asignados</h2>
+                                <p class="card__subtitle">Letrados preferentes con habilitación directa en sus materias
+                                    societarias.</p>
+                            </div>
+                            <span class="card__counter">2 letrados en cartera directa</span>
+                        </header>
+
+                        <div class="favorites-grid">
+
+                            <article class="favorite-lawyer">
+                                <div class="favorite-lawyer__top">
+                                    <div class="favorite-lawyer__identity">
+                                        <div class="favorite-lawyer__avatar">EG</div>
+                                        <div>
+                                            <div class="favorite-lawyer__name-row">
+                                                <h3 class="favorite-lawyer__name">Dña. Elena Garrido</h3>
+                                                <span class="favorite-lawyer__dot" title="Disponible"></span>
+                                            </div>
+                                            <p class="favorite-lawyer__specialty">Derecho Mercantil &amp; Societario</p>
+                                            <p class="favorite-lawyer__meta">Colegiada ICAM 48.912 · 18 años exp.</p>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="favorite-lawyer__fav" title="Desmarcar favorito"
+                                        aria-pressed="true">
+                                        <span class="material-symbols-outlined">star</span>
+                                    </button>
+                                </div>
+                                <div class="favorite-lawyer__bottom">
+                                    <div class="favorite-lawyer__rating">
+                                        <span class="favorite-lawyer__rating-value">4.9</span>
+                                        <span class="favorite-lawyer__rating-max">/ 5.0</span>
+                                        <span class="favorite-lawyer__rating-star">★</span>
+                                    </div>
+                                    <button type="button" class="btn btn--primary btn--sm">
+                                        <span class="material-symbols-outlined">calendar_today</span>
+                                        Solicitar Consulta
+                                    </button>
+                                </div>
+                            </article>
+
+                            <article class="favorite-lawyer">
+                                <div class="favorite-lawyer__top">
+                                    <div class="favorite-lawyer__identity">
+                                        <div class="favorite-lawyer__avatar favorite-lawyer__avatar--alt">CM</div>
+                                        <div>
+                                            <div class="favorite-lawyer__name-row">
+                                                <h3 class="favorite-lawyer__name">D. Carlos Mendoza</h3>
+                                                <span class="favorite-lawyer__dot" title="Disponible"></span>
+                                            </div>
+                                            <p class="favorite-lawyer__specialty">Propiedad Intelectual &amp; Patentes
+                                            </p>
+                                            <p class="favorite-lawyer__meta">Colegiado ICAB 31.045 · 14 años exp.</p>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="favorite-lawyer__fav" title="Desmarcar favorito"
+                                        aria-pressed="true">
+                                        <span class="material-symbols-outlined">star</span>
+                                    </button>
+                                </div>
+                                <div class="favorite-lawyer__bottom">
+                                    <div class="favorite-lawyer__rating">
+                                        <span class="favorite-lawyer__rating-value">5.0</span>
+                                        <span class="favorite-lawyer__rating-max">/ 5.0</span>
+                                        <span class="favorite-lawyer__rating-star">★</span>
+                                    </div>
+                                    <button type="button" class="btn btn--primary btn--sm">
+                                        <span class="material-symbols-outlined">calendar_today</span>
+                                        Solicitar Consulta
+                                    </button>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== PANEL: HISTORIAL ===== -->
+                <section class="profile-panel profile-panel--hidden" id="tab-historial" role="tabpanel"
+                    aria-labelledby="tab-btn-historial">
+                    <div class="card card--lg">
+                        <header class="card__header">
+                            <div>
+                                <h2 class="card__title">Historial Jurídico Reciente</h2>
+                                <p class="card__subtitle">Registro de actuaciones procesales, dictámenes emitidos y
+                                    salas seguras activas.</p>
+                            </div>
+                            <span class="badge badge--neutral">3 expedientes este semestre</span>
+                        </header>
+
+                        <div class="history-list">
+
+                            <article class="history-item">
+                                <div class="history-item__main">
+                                    <span class="material-symbols-outlined history-item__icon">description</span>
+                                    <div>
+                                        <div class="history-item__title-row">
+                                            <span class="history-item__title">Revisión Pacto de Socios Serie A</span>
+                                            <span class="history-item__ref">#LB-2024-098</span>
+                                        </div>
+                                        <p class="history-item__meta">
+                                            Letrada: <strong>Elena Garrido</strong> · 14 Oct 2024
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="history-item__actions">
+                                    <span class="badge badge--subtle">Finalizada</span>
+                                    <button type="button" class="btn btn--outline btn--sm">
+                                        <span class="material-symbols-outlined">file_open</span>
+                                        Ver Dictamen
+                                    </button>
+                                </div>
+                            </article>
+
+                            <article class="history-item">
+                                <div class="history-item__main">
+                                    <span
+                                        class="material-symbols-outlined history-item__icon history-item__icon--active">pending_actions</span>
+                                    <div>
+                                        <div class="history-item__title-row">
+                                            <span class="history-item__title">Registro de Marca ante la OEPM</span>
+                                            <span class="history-item__ref">#LB-2024-112</span>
+                                        </div>
+                                        <p class="history-item__meta">
+                                            Letrado: <strong>Carlos Mendoza</strong> · 28 Oct 2024
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="history-item__actions">
+                                    <span class="badge badge--in-progress">En Curso</span>
+                                    <button type="button" class="btn btn--primary btn--sm">
+                                        <span class="material-symbols-outlined">meeting_room</span>
+                                        Acceder a Sala Segura
+                                    </button>
+                                </div>
+                            </article>
+
+                            <article class="history-item">
+                                <div class="history-item__main">
+                                    <span class="material-symbols-outlined history-item__icon">verified_user</span>
+                                    <div>
+                                        <div class="history-item__title-row">
+                                            <span class="history-item__title">Auditoría RGPD de Plataforma Web</span>
+                                            <span class="history-item__ref">#LB-2024-045</span>
+                                        </div>
+                                        <p class="history-item__meta">
+                                            Equipo de Cumplimiento Normativo · 12 Sep 2024
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="history-item__actions">
+                                    <span class="badge badge--neutral">Completada y Facturada</span>
+                                    <button type="button" class="btn btn--outline btn--sm">
+                                        <span class="material-symbols-outlined">archive</span>
+                                        Expediente
+                                    </button>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer site-footer--minimal">
+        <div class="site-footer__inner">
+            <div class="site-footer__brand">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE7BreNG36sG8FI3gJU4jIAb2kJxNjRlST2dsBtjnahmBycFBtabooC4eV0WFCdK_kOzNYMuOSPjCqK0GITOUPJhdRYMg5v5qBBFTshHynVtsS0EjyUIXm_vd-6h0wLb7Fsl_LVXf8TJHPp1VG9feIXeamAly3dY2gLSm9eVh3Cv91MIL4qhASmxwEhUC5IpRHATUtCc446sqf50dcaEC5IAkiHiGs-Wmkep0oah2BSAnoleW9bQIuquYdGyi8P4G7Mw"
+                    alt="LegalBridge" class="site-footer__logo">
+                <span class="site-footer__copy">© 2025 Sovereign Juris Group. Confidencialidad y Privilegio
+                    Jurídico.</span>
+            </div>
+            <nav class="site-footer__nav" aria-label="Enlaces legales">
+                <a href="#">Aviso Legal</a>
+                <a href="#">Protección de Datos</a>
+                <a href="#">Código Deontológico</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+
+</html>

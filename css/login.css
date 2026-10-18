@@ -1,0 +1,329 @@
+/* ==========================================================================
+   LOGIN · LegalBridge
+   Depende de: static.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. Variables — ⚠ MIGRAR a static.css cuando terminemos las 4 páginas
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colores */
+  --color-background: #f7f9ff;
+  --color-surface: #f7f9ff;
+  --color-surface-lowest: #ffffff;
+  --color-surface-low: #f1f4f9;
+  --color-surface-container: #ebeef3;
+  --color-surface-high: #e5e8ee;
+  --color-on-surface: #181c20;
+  --color-on-surface-variant: #43474d;
+  --color-primary: #000f22;
+  --color-primary-container: #0a2540;
+  --color-on-primary: #ffffff;
+  --color-secondary: #47607e;
+  --color-outline: #74777e;
+  --color-outline-variant: #c4c6ce;
+  --color-error: #ba1a1a;
+
+  /* Tipografía */
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Espaciado */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+
+  /* Radios */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   1. Layout de la página
+   ⚠ .page / .page--auth → migrar a static.css
+   -------------------------------------------------------------------------- */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+.login {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 5.5rem var(--space-md) var(--space-xl);
+}
+
+/* --------------------------------------------------------------------------
+   2. Tarjeta de login
+   -------------------------------------------------------------------------- */
+.login__card {
+  width: 100%;
+  max-width: 28rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-surface-lowest);
+  border: 1px solid var(--color-surface-container);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.login__brand {
+  margin-bottom: 1.5rem;
+}
+
+.login__brand-logo {
+  height: 3.5rem;
+  width: auto;
+}
+
+.login__header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.875rem;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--color-primary);
+}
+
+.login__subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-on-surface-variant);
+}
+
+/* --------------------------------------------------------------------------
+   3. Separador "o con correo electrónico"
+   -------------------------------------------------------------------------- */
+.login__divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.login__divider::before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--color-surface-high);
+}
+
+.login__divider-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 0.75rem;
+  background: var(--color-surface-lowest);
+  font-size: 0.6875rem;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-outline);
+}
+
+/* --------------------------------------------------------------------------
+   4. Formulario
+   -------------------------------------------------------------------------- */
+.login__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login__submit {
+  margin-top: 0.5rem;
+}
+
+.login__footer {
+  margin: 1.5rem 0 0;
+  text-align: center;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-on-surface-variant);
+}
+
+.login__footer-link {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.login__footer-link:hover { text-decoration: underline; }
+
+/* --------------------------------------------------------------------------
+   5. Componentes reutilizables
+   ⚠ .btn, .form-field, .otp → MIGRAR a static.css
+   -------------------------------------------------------------------------- */
+
+/* --- Botón --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 2.75rem;
+  padding: 0 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.btn--primary {
+  background: var(--color-primary-container);
+  color: var(--color-on-primary);
+}
+.btn--primary:hover { background: var(--color-primary); }
+
+.btn--oauth {
+  background: var(--color-surface-lowest);
+  border-color: var(--color-outline-variant);
+  color: var(--color-on-surface);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.25rem;
+}
+.btn--oauth:hover { background: var(--color-surface-low); }
+.btn--oauth svg { width: 1rem; height: 1rem; flex-shrink: 0; }
+
+/* --- Campo de formulario --- */
+.form-field { width: 100%; }
+
+.form-field__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.form-field__label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-on-surface);
+}
+.form-field__header .form-field__label { margin-bottom: 0; }
+
+.form-field__link {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color .15s ease;
+}
+.form-field__link:hover { color: var(--color-primary); }
+
+.form-field__input {
+  width: 100%;
+  height: 2.75rem;
+  padding: 0 0.75rem;
+  background: var(--color-surface-low);
+  color: var(--color-on-surface);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.form-field__input::placeholder { color: var(--color-outline); }
+.form-field__input:focus {
+  outline: none;
+  background: var(--color-surface-lowest);
+  border-color: var(--color-outline-variant);
+}
+
+.form-field__password { position: relative; }
+.form-field__password .form-field__input { padding-right: 2.75rem; }
+
+.form-field__toggle {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: var(--color-on-surface-variant);
+  cursor: pointer;
+}
+.form-field__toggle:hover { color: var(--color-on-surface); }
+.form-field__toggle .material-symbols-outlined { font-size: 1.25rem; }
+
+/* --- OTP 2FA --- */
+.otp {
+  margin: 0.25rem 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.otp__label {
+  display: block;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-on-surface);
+}
+
+.otp__inputs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+}
+
+.otp__input {
+  width: 100%;
+  height: 2.75rem;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-surface-low);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.otp__input:focus {
+  outline: none;
+  background: var(--color-surface-lowest);
+  border-color: var(--color-outline-variant);
+}

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LegalBridge — Asesoramiento legal experto con abogados colegiados verificados.">
+  <title>LegalBridge · Asesoramiento Legal Experto</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/static.css">
+  <link rel="stylesheet" href="css/home.css">
+
+  <script src="js/home.js" defer></script>
+</head>
+
+<body class="page page--home">
+
+  <header class="site-header site-header--solid">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-header__brand">
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1WuyB7l_qYvhXjYOFPnMjUnUxcjYc_jDRM8cQilTGkd6W9e8QqiowkBUhlYilSqaAZRQzn21Q4DqHPGOLE9YxOzcV7w4TOQV4SBu8J0SL3EXgv8nlsYy-Pdq-HFeetCJZWC9HwQU788m4rrJwqy1JZnpISEnPLO7gmNymfySytGRlL1PbtkkMugdnl_6Dq0OjatkYJ_laYHA4nOfbKyieEC8MrIqiBmYVclUzb7gfl-ScmzLBQHAYgfBv3929812eSA"
+          alt="LegalBridge" class="site-header__logo">
+      </a>
+
+      <nav class="main-nav" aria-label="Principal">
+        <a href="#servicios" class="main-nav__link">Servicios</a>
+        <a href="#areas-de-práctica" class="main-nav__link">Áreas de Práctica</a>
+        <a href="#abogados-destacados" class="main-nav__link">Abogados</a>
+        <a href="#" class="main-nav__link">Empresas</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="header-actions__login">Iniciar sesión</a>
+        <a href="login.html" class="btn btn--primary btn--sm">
+          <span class="material-symbols-outlined">balance</span>
+          <span>Pedir Cita</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO + BUSCADOR ================= -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__blob hero__blob--top"></div>
+        <div class="hero__blob hero__blob--bottom"></div>
+        <svg class="hero__grid-svg" viewBox="0 0 400 800" fill="none" preserveAspectRatio="none">
+          <line x1="0" x2="400" y1="50" y2="50" stroke-dasharray="6 6" stroke-width="1" />
+          <line x1="0" x2="400" y1="200" y2="200" stroke-width="1" />
+          <line x1="0" x2="400" y1="350" y2="350" stroke-dasharray="6 6" stroke-width="1" />
+          <line x1="0" x2="400" y1="500" y2="500" stroke-width="1" />
+          <line x1="0" x2="400" y1="650" y2="650" stroke-dasharray="6 6" stroke-width="1" />
+          <line x1="120" x2="120" y1="0" y2="800" stroke-width="1" />
+          <line x1="280" x2="280" y1="0" y2="800" stroke-dasharray="4 4" stroke-width="1" />
+        </svg>
+      </div>
+
+      <div class="hero__inner">
+
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          <span class="hero__badge-text">Seguridad Jurídica Institucional · Red Homologada</span>
+        </div>
+
+        <div class="hero__content">
+          <h1 class="hero__title">
+            Asesoramiento Legal Experto, Confiable y al Alcance de su Empresa o Familia
+          </h1>
+          <p class="hero__subtitle">
+            Conecte con abogados colegiados y verificados para consultas inmediatas, redacción de contratos,
+            constitución mercantil, defensa fiscal y litigios de alta complejidad procesal.
+          </p>
+        </div>
+
+        <div class="search-console">
+          <form class="search-console__form" id="search-form" novalidate>
+            <div class="search-field search-field--service">
+              <label for="search-service" class="search-field__label">
+                <span class="material-symbols-outlined">gavel</span>
+                ¿Qué servicio legal necesita?
+              </label>
+              <input id="search-service" class="search-field__input" type="text"
+                placeholder="Ej: Constitución SL, Despido, Marca OEPM...">
+            </div>
+
+            <div class="search-field search-field--area">
+              <label for="search-area" class="search-field__label">
+                <span class="material-symbols-outlined">category</span>
+                Área de Especialidad
+              </label>
+              <select id="search-area" class="search-field__select">
+                <option value="">Todas las ramas legales</option>
+                <option value="mercantil">Derecho Mercantil y Societario</option>
+                <option value="laboral">Derecho Laboral y RRHH</option>
+                <option value="fiscal">Fiscal y Tributario</option>
+                <option value="ip">Propiedad Intelectual y Patentes</option>
+                <option value="civil">Civil e Inmobiliario</option>
+                <option value="litigacion">Litigación y Arbitraje</option>
+              </select>
+            </div>
+
+            <div class="search-field search-field--location">
+              <label for="search-location" class="search-field__label">
+                <span class="material-symbols-outlined">pin_drop</span>
+                Jurisdicción / Ciudad
+              </label>
+              <select id="search-location" class="search-field__select">
+                <option value="nacional">Nacional / Videoconsulta Inmediata</option>
+                <option value="madrid">Madrid (Tribunal Supremo / AN)</option>
+                <option value="barcelona">Barcelona (TSJC)</option>
+                <option value="valencia">Valencia</option>
+                <option value="sevilla">Sevilla</option>
+                <option value="bilbao">Bilbao</option>
+              </select>
+            </div>
+
+            <div class="search-console__submit">
+              <button type="submit" class="btn btn--primary btn--lg btn--block">
+                <span class="material-symbols-outlined">search</span>
+                <span>Buscar Abogado</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="chips">
+          <span class="chips__label">Trámites Frecuentes:</span>
+          <button type="button" class="chip" data-chip="Constitución de Sociedad">Constitución de Sociedad</button>
+          <button type="button" class="chip" data-chip="Contrato de Arrendamiento">Contrato de Arrendamiento</button>
+          <button type="button" class="chip" data-chip="Registro de Marca OEPM">Registro de Marca OEPM</button>
+          <button type="button" class="chip" data-chip="Despido o Finiquito">Despido o Finiquito</button>
+          <button type="button" class="chip" data-chip="Inspección de Hacienda">Inspección de Hacienda</button>
+          <button type="button" class="chip" data-chip="Herencias y Testamentos">Herencias y Testamentos</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= STATS BAR ================= -->
+    <section class="stats-bar">
+      <div class="stats-bar__inner">
+        <div class="stat">
+          <div class="stat__icon"><span class="material-symbols-outlined">verified</span></div>
+          <div>
+            <div class="stat__value">+1.450</div>
+            <p class="stat__label">Abogados Colegiados Verificados</p>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat__icon"><span class="material-symbols-outlined">insights</span></div>
+          <div>
+            <div class="stat__value">98.6%</div>
+            <p class="stat__label">Resoluciones y Casos Exitosos</p>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat__icon"><span class="material-symbols-outlined">pace</span></div>
+          <div>
+            <div class="stat__value">&lt; 2 Horas</div>
+            <p class="stat__label">Tiempo de Respuesta Inicial</p>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat__icon"><span class="material-symbols-outlined">receipt_long</span></div>
+          <div>
+            <div class="stat__value">100% Fijado</div>
+            <p class="stat__label">Honorarios Transparentes sin Sorpresas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ÁREAS DE PRÁCTICA ================= -->
+    <section id="areas-de-práctica" class="section section--surface">
+      <div class="section__inner">
+        <header class="section__header">
+          <div>
+            <span class="section__eyebrow">Cobertura Jurídica Integral</span>
+            <h2 class="section__title">Áreas de Práctica Especializadas</h2>
+          </div>
+          <p class="section__desc">
+            Equipos multidisciplinares de letrados con dedicación exclusiva en cada rama del ordenamiento jurídico
+            español y comunitario.
+          </p>
+        </header>
+
+        <div class="practice-grid">
+
+          <article class="practice-card">
+            <div>
+              <div class="practice-card__icon"><span class="material-symbols-outlined">corporate_fare</span></div>
+              <h3 class="practice-card__title">Mercantil y Societario</h3>
+              <p class="practice-card__desc">Constitución de empresas, pactos de socios, operaciones de M&amp;A y
+                auditorías de compliance directivo.</p>
+              <ul class="practice-card__list">
+                <li><span class="practice-card__bullet"></span>Constitución exprés en 48h</li>
+                <li><span class="practice-card__bullet"></span>Rondas de Inversión y Notas Convertibles</li>
+                <li><span class="practice-card__bullet"></span>Secretaría de Consejo Corporativo</li>
+              </ul>
+            </div>
+            <a href="#" class="practice-card__link">
+              <span>Ver especialistas en esta área</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </article>
+
+          <article class="practice-card">
+            <div>
+              <div class="practice-card__icon"><span class="material-symbols-outlined">copyright</span></div>
+              <h3 class="practice-card__title">Propiedad Intelectual y Tech</h3>
+              <p class="practice-card__desc">Registro de marcas ante la OEPM y EUIPO, patentes, protección de código
+                fuente, licencias y secretos comerciales.</p>
+              <ul class="practice-card__list">
+                <li><span class="practice-card__bullet"></span>Marcas nacionales y comunitarias</li>
+                <li><span class="practice-card__bullet"></span>Contratos de cesión de IP de Software</li>
+                <li><span class="practice-card__bullet"></span>Defensa por infracción y cese</li>
+              </ul>
+            </div>
+            <a href="#" class="practice-card__link">
+              <span>Ver especialistas en esta área</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </article>
+
+          <article class="practice-card">
+            <div>
+              <div class="practice-card__icon"><span class="material-symbols-outlined">badge</span></div>
+              <h3 class="practice-card__title">Derecho Laboral y RRHH</h3>
+              <p class="practice-card__desc">Contratos de alta dirección, planes de retribución variable, expedientes de
+                regulación de empleo y defensa en SMAC.</p>
+              <ul class="practice-card__list">
+                <li><span class="practice-card__bullet"></span>Auditorías salariales y de plantilla</li>
+                <li><span class="practice-card__bullet"></span>Blindajes y Cláusulas de No Competencia</li>
+                <li><span class="practice-card__bullet"></span>Conciliaciones y Magistratura</li>
+              </ul>
+            </div>
+            <a href="#" class="practice-card__link">
+              <span>Ver especialistas en esta área</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </article>
+
+          <article class="practice-card">
+            <div>
+              <div class="practice-card__icon"><span class="material-symbols-outlined">account_balance</span></div>
+              <h3 class="practice-card__title">Fiscal y Tributario</h3>
+              <p class="practice-card__desc">Estrategia tributaria corporativa, recursos frente al TEAR/TEAC e
+                intervención letrada en inspecciones de la AEAT.</p>
+              <ul class="practice-card__list">
+                <li><span class="practice-card__bullet"></span>Inspecciones y requerimientos de Hacienda</li>
+                <li><span class="practice-card__bullet"></span>Tributación de No Residentes y Expats</li>
+                <li><span class="practice-card__bullet"></span>Recursos Contencioso-Administrativos</li>
+              </ul>
+            </div>
+            <a href="#" class="practice-card__link">
+              <span>Ver especialistas en esta área</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </article>
+
+          <article class="practice-card">
+            <div>
+              <div class="practice-card__icon"><span class="material-symbols-outlined">real_estate_agent</span></div>
+              <h3 class="practice-card__title">Civil e Inmobiliario</h3>
+              <p class="practice-card__desc">Due diligence inmobiliaria en compraventas, contratos de arras, desahucios,
+                arrendamientos complejos y donaciones.</p>
+              <ul class="practice-card__list">
+                <li><span class="practice-card__bullet"></span>Revisión registral y cargas notariales</li>
+                <li><span class="practice-card__bullet"></span>Contratos de Arras y Opciones de Compra</li>
+                <li><span class="practice-card__bullet"></span>Planificación Sucesoria y Herencias</li>
+              </ul>
+            </div>
+            <a href="#" class="practice-card__link">
+              <span>Ver especialistas en esta área</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </article>
+
+          <article class="practice-card">
+            <div>
+              <div class="practice-card__icon"><span class="material-symbols-outlined">balance</span></div>
+              <h3 class="practice-card__title">Litigación y Conflictos</h3>
+              <p class="practice-card__desc">Defensa en sede judicial civil y mercantil, procedimientos monitorios,
+                arbitrajes ante Cámaras de Comercio y mediación.</p>
+              <ul class="practice-card__list">
+                <li><span class="practice-card__bullet"></span>Reclamación judicial de impagos</li>
+                <li><span class="practice-card__bullet"></span>Medidas cautelares urgentes</li>
+                <li><span class="practice-card__bullet"></span>Arbitraje Comercial Nacional e Internacional</li>
+              </ul>
+            </div>
+            <a href="#" class="practice-card__link">
+              <span>Ver especialistas en esta área</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOGADOS DESTACADOS ================= -->
+    <section id="abogados-destacados" class="section section--alt">
+      <div class="section__inner">
+        <header class="section__header">
+          <div>
+            <span class="section__eyebrow">Cuerpo Letrado Homologado</span>
+            <h2 class="section__title">Abogados Verificados y de Mayor Reputación</h2>
+          </div>
+          <a href="./catalogo.html" class="btn btn--outline">
+            <span>Explorar el Directorio Completo</span>
+            <span class="material-symbols-outlined">manage_search</span>
+          </a>
+        </header>
+
+        <div class="lawyers-grid">
+
+          <!-- Lawyer 1 -->
+          <article class="lawyer-card">
+            <div>
+              <div class="lawyer-card__photo">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx4gNBXBqGHvzpSw3e9goGFIJXZrQ8cA1Y9REX5pCmONPY_pXTp4e-k46Dhs3lwCrXuSddN_jx2x-8FTNzb0I5GnttL6BIO1XwzSgUHFYFIeLMgpu0DPPwrgacnFaAUb42X4UP5II31ByoAZ7Q2rq5LafICUd48b03kOThCSWj8v4co-cm02aasv5AO5_rKXO-l97y4-Z_kEnYYom-ZKBHu8UdcYnsJKAobAza-vDFJtAPhKFPBo93"
+                  alt="Dra. Elena Valenzuela M.">
+                <div class="lawyer-card__rating">
+                  <span class="material-symbols-outlined">star</span>
+                  <span class="lawyer-card__rating-value">4.97</span>
+                  <span class="lawyer-card__rating-count">(142)</span>
+                </div>
+              </div>
+              <div class="lawyer-card__verified">
+                <span class="material-symbols-outlined">verified</span>
+                <span>ICAM Col. 54.892</span>
+              </div>
+              <h3 class="lawyer-card__name">Dra. Elena Valenzuela M.</h3>
+              <p class="lawyer-card__specialty">Mercantil &amp; Fusiones (M&amp;A)</p>
+              <p class="lawyer-card__bio">Ex-socia de bufete internacional. 18 años de ejercicio especializado en pactos
+                y reestructuraciones.</p>
+              <div class="lawyer-card__price-box">
+                <span class="lawyer-card__price-label">Consulta / Trámite:</span>
+                <span class="lawyer-card__price-value">Desde 95€</span>
+              </div>
+              <div class="lawyer-card__availability">
+                <span class="lawyer-card__availability-dot"></span>
+                <span>Disponible hoy para videocita</span>
+              </div>
+            </div>
+            <div class="lawyer-card__actions">
+              <button type="button" class="btn btn--primary btn--block">Solicitar Consulta Inmediata</button>
+              <button type="button" class="btn btn--ghost btn--block">Ver Perfil y Horarios</button>
+            </div>
+          </article>
+
+          <!-- Lawyer 2 -->
+          <article class="lawyer-card">
+            <div>
+              <div class="lawyer-card__photo">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkrZ-XLkuGTgzEh97lEgCQb2c7IjLj4acFHWanq4sF26ylLw-W_i49G8Cf90bqp4i0WfTSwJ225A9jN2fYD5aC56CK3wFvNCWttMZFRGQXk5dRQ-7Mk6dDmswHjNJjpgB6G5b_Nn6Z3lF2TGPB7R4F1-cQB4a4sQ56FDpJyYsBuzNKlb19J_tNFyLVRxS1UofDrgHh3l69waNzqj09xz9FWuoWHbaScxA9bsOFXjWbrYz852T4-oKy"
+                  alt="Lic. Carlos Aróstegui Pons">
+                <div class="lawyer-card__rating">
+                  <span class="material-symbols-outlined">star</span>
+                  <span class="lawyer-card__rating-value">4.95</span>
+                  <span class="lawyer-card__rating-count">(118)</span>
+                </div>
+              </div>
+              <div class="lawyer-card__verified">
+                <span class="material-symbols-outlined">verified</span>
+                <span>ICAB Col. 38.410</span>
+              </div>
+              <h3 class="lawyer-card__name">Lic. Carlos Aróstegui Pons</h3>
+              <p class="lawyer-card__specialty">Litigación Fiscal &amp; AEAT</p>
+              <p class="lawyer-card__bio">15 años defendiendo procedimientos ante la Inspección Tributaria y tribunales
+                contenciosos.</p>
+              <div class="lawyer-card__price-box">
+                <span class="lawyer-card__price-label">Consulta / Trámite:</span>
+                <span class="lawyer-card__price-value">110€ / sesión</span>
+              </div>
+              <div class="lawyer-card__availability">
+                <span class="lawyer-card__availability-dot"></span>
+                <span>Hueco disponible mañana</span>
+              </div>
+            </div>
+            <div class="lawyer-card__actions">
+              <button type="button" class="btn btn--primary btn--block">Solicitar Consulta Inmediata</button>
+              <button type="button" class="btn btn--ghost btn--block">Ver Perfil y Horarios</button>
+            </div>
+          </article>
+
+          <!-- Lawyer 3 -->
+          <article class="lawyer-card">
+            <div>
+              <div class="lawyer-card__photo">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCs6PBx09YR3qgO26cCpOUOLB6xYkF5oM2qmtL9nH7nvdAo13MNQQvtPmz5-sLBhF7wlZn0EkbYxzvBUQxbHqOrXzEezb7P4RByW7fImMKLogZe86h2ILjF9Is9R4V9c_-Y3UjfGvJoEUxkOdhMThzoeu_5fSHNoi4lj3Xhmh4JUOXKHCymo6Tf1jZR0OlFxP1-WDkfjd75swbd8icyMVQIq1XfL7QV-KYLJFDTPHLL8nncsVJd-Bb"
+                  alt="Dra. Sofía Mendoza Barral">
+                <div class="lawyer-card__rating">
+                  <span class="material-symbols-outlined">star</span>
+                  <span class="lawyer-card__rating-value">4.99</span>
+                  <span class="lawyer-card__rating-count">(96)</span>
+                </div>
+              </div>
+              <div class="lawyer-card__verified">
+                <span class="material-symbols-outlined">verified</span>
+                <span>ICAV Col. 22.905</span>
+              </div>
+              <h3 class="lawyer-card__name">Dra. Sofía Mendoza Barral</h3>
+              <p class="lawyer-card__specialty">IP, Software &amp; Marcas</p>
+              <p class="lawyer-card__bio">Especialista en estructuración de patentes, startups deep-tech y defensa de
+                activos intangibles.</p>
+              <div class="lawyer-card__price-box">
+                <span class="lawyer-card__price-label">Consulta / Trámite:</span>
+                <span class="lawyer-card__price-value">85€ / sesión</span>
+              </div>
+              <div class="lawyer-card__availability">
+                <span class="lawyer-card__availability-dot"></span>
+                <span>Disponible hoy en 1h</span>
+              </div>
+            </div>
+            <div class="lawyer-card__actions">
+              <button type="button" class="btn btn--primary btn--block">Solicitar Consulta Inmediata</button>
+              <button type="button" class="btn btn--ghost btn--block">Ver Perfil y Horarios</button>
+            </div>
+          </article>
+
+          <!-- Lawyer 4 -->
+          <article class="lawyer-card">
+            <div>
+              <div class="lawyer-card__photo">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBilONw6VlZ1plUMgXm8R3NnJnuKVZVC509cU25bA07VUkGDTQeDsp0m7zWhsm9unlqhySYFYo5ikgoFcEsV5vWqVHp1UXOvNGPhRWC6rO0uQq7GUjlrVrxsYpY8dN2XGlRlMnp96yfmpxImDNsvQiFCO9xsNYmwRjtsg4VcUn_d8p6UnVwdzkBjxJp3-0Ay9F1H3ub-DRJQbf0cHb-fisFY5evU_WEmmMJ-3U0GB8IMeiWdCqr226y"
+                  alt="Lic. Javier Soler Durán">
+                <div class="lawyer-card__rating">
+                  <span class="material-symbols-outlined">star</span>
+                  <span class="lawyer-card__rating-value">4.93</span>
+                  <span class="lawyer-card__rating-count">(130)</span>
+                </div>
+              </div>
+              <div class="lawyer-card__verified">
+                <span class="material-symbols-outlined">verified</span>
+                <span>ICAS Col. 17.654</span>
+              </div>
+              <h3 class="lawyer-card__name">Lic. Javier Soler Durán</h3>
+              <p class="lawyer-card__specialty">Laboral &amp; Reestructuración</p>
+              <p class="lawyer-card__bio">Negociador veterano en despidos colectivos, convenios de sector y contratos de
+                alta dirección.</p>
+              <div class="lawyer-card__price-box">
+                <span class="lawyer-card__price-label">Consulta / Trámite:</span>
+                <span class="lawyer-card__price-value">90€ / sesión</span>
+              </div>
+              <div class="lawyer-card__availability">
+                <span class="lawyer-card__availability-dot"></span>
+                <span>Disponible hoy tarde</span>
+              </div>
+            </div>
+            <div class="lawyer-card__actions">
+              <button type="button" class="btn btn--primary btn--block">Solicitar Consulta Inmediata</button>
+              <button type="button" class="btn btn--ghost btn--block">Ver Perfil y Horarios</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRECIOS CERRADOS / PROMOS ================= -->
+    <section id="servicios" class="section section--surface">
+      <div class="section__inner">
+        <header class="section__header">
+          <div>
+            <span class="section__eyebrow">Cero Incertidumbre Económica</span>
+            <h2 class="section__title">Servicios con Precio Cerrado y Promociones Activas</h2>
+          </div>
+          <p class="section__desc">
+            Tarifas cerradas con hoja de encargo formal. Sin horas facturables imprevistas ni costes notariales ocultos.
+          </p>
+        </header>
+
+        <div class="pricing-grid">
+
+          <article class="pricing-card">
+            <span class="pricing-card__badge pricing-card__badge--tertiary">20% Dto. Lanzamiento</span>
+            <div>
+              <div>
+                <span class="pricing-card__category">Trámite Mercantil Completo</span>
+                <h3 class="pricing-card__title">Constitución Sociedad Limitada</h3>
+              </div>
+              <div class="pricing-card__price">
+                <span class="pricing-card__price-value">380€</span>
+                <span class="pricing-card__price-old">475€</span>
+                <span class="pricing-card__price-note">+ IVA</span>
+              </div>
+              <ul class="pricing-card__list">
+                <li><span class="material-symbols-outlined">check_circle</span>Redacción de estatutos sociales a medida
+                </li>
+                <li><span class="material-symbols-outlined">check_circle</span>Coordinación notarial telemática CIRCE
+                </li>
+                <li><span class="material-symbols-outlined">check_circle</span>Obtención del NIF provisional y
+                  definitivo</li>
+                <li><span class="material-symbols-outlined">check_circle</span>Inscripción en Registro Mercantil
+                  Provincial</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn--primary btn--block">Contratar Constitución</button>
+          </article>
+
+          <article class="pricing-card">
+            <span class="pricing-card__badge pricing-card__badge--secondary">Pymes &amp; Digital</span>
+            <div>
+              <div>
+                <span class="pricing-card__category">Cumplimiento Normativo</span>
+                <h3 class="pricing-card__title">Auditoría RGPD &amp; Web Legal</h3>
+              </div>
+              <div class="pricing-card__price">
+                <span class="pricing-card__price-value">240€</span>
+                <span class="pricing-card__price-note">+ IVA (Pago Único)</span>
+              </div>
+              <ul class="pricing-card__list">
+                <li><span class="material-symbols-outlined">check_circle</span>Auditoría de textos legales web y cookies
+                </li>
+                <li><span class="material-symbols-outlined">check_circle</span>Registro de Actividades de Tratamiento
+                  (RAT)</li>
+                <li><span class="material-symbols-outlined">check_circle</span>Contratos con Encargados del Tratamiento
+                </li>
+                <li><span class="material-symbols-outlined">check_circle</span>Certificado de conformidad para
+                  inspección</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn--primary btn--block">Contratar Auditoría</button>
+          </article>
+
+          <article class="pricing-card">
+            <span class="pricing-card__badge pricing-card__badge--tertiary">Más Solicitado</span>
+            <div>
+              <div>
+                <span class="pricing-card__category">Activos Intangibles</span>
+                <h3 class="pricing-card__title">Registro de Marca (OEPM)</h3>
+              </div>
+              <div class="pricing-card__price">
+                <span class="pricing-card__price-value">190€</span>
+                <span class="pricing-card__price-note">+ tasas oficiales (128€)</span>
+              </div>
+              <ul class="pricing-card__list">
+                <li><span class="material-symbols-outlined">check_circle</span>Informe de viabilidad y parecidos
+                  fonéticos</li>
+                <li><span class="material-symbols-outlined">check_circle</span>Clasificación de Niza para su sector
+                  comercial</li>
+                <li><span class="material-symbols-outlined">check_circle</span>Tramitación telemática directa ante OEPM
+                </li>
+                <li><span class="material-symbols-outlined">check_circle</span>Custodia y vigilancia durante los 10 años
+                </li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn--primary btn--block">Proteger mi Marca</button>
+          </article>
+
+          <article class="pricing-card">
+            <span class="pricing-card__badge pricing-card__badge--secondary-fixed">Sin Compromiso</span>
+            <div>
+              <div>
+                <span class="pricing-card__category">Diagnóstico Inmediato</span>
+                <h3 class="pricing-card__title">Consulta Exprés Online</h3>
+              </div>
+              <div class="pricing-card__price">
+                <span class="pricing-card__price-value">49€</span>
+                <span class="pricing-card__price-note pricing-card__price-note--highlight">(1ª Consulta
+                  Bonificada)</span>
+              </div>
+              <ul class="pricing-card__list">
+                <li><span class="material-symbols-outlined">check_circle</span>30 min de videollamada cifrada de extremo
+                  a extremo</li>
+                <li><span class="material-symbols-outlined">check_circle</span>Revisión previa de hasta 3 documentos
+                </li>
+                <li><span class="material-symbols-outlined">check_circle</span>Dictamen verbal de viabilidad jurídica
+                </li>
+                <li><span class="material-symbols-outlined">check_circle</span>Deducible si contrata el procedimiento
+                  final</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn--tertiary btn--block">Reservar Videollamada (49€)</button>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CÓMO FUNCIONA ================= -->
+    <section class="section section--alt">
+      <div class="section__inner">
+        <header class="section__header section__header--center">
+          <div>
+            <span class="section__eyebrow">Protocolo de Atención Procesal</span>
+            <h2 class="section__title">¿Cómo Funciona LegalBridge?</h2>
+            <p class="section__desc">Diseñado para brindar certidumbre en cada etapa procesal bajo estrictos cánones
+              deontológicos y tecnológicos.</p>
+          </div>
+        </header>
+
+        <div class="steps-grid">
+
+          <article class="step-card">
+            <span class="step-card__number">01</span>
+            <div>
+              <div class="step-card__icon"><span class="material-symbols-outlined">manage_search</span></div>
+              <h3 class="step-card__title">1. Plantee su caso o elija especialista</h3>
+              <p class="step-card__desc">Describa brevemente su requerimiento legal o elija directamente entre nuestro
+                claustro de letrados colegiados clasificados por jurisdicción y materia.</p>
+            </div>
+            <div class="step-card__footer">
+              <span class="material-symbols-outlined">lock</span>
+              <span>Secreto profesional garantizado</span>
+            </div>
+          </article>
+
+          <article class="step-card">
+            <span class="step-card__number">02</span>
+            <div>
+              <div class="step-card__icon"><span class="material-symbols-outlined">price_check</span></div>
+              <h3 class="step-card__title">2. Compare propuestas con precio cerrado</h3>
+              <p class="step-card__desc">Reciba presupuestos formalizados sin letra pequeña. Verifique el número de
+                colegiado, historial de resoluciones y valoraciones contrastadas.</p>
+            </div>
+            <div class="step-card__footer">
+              <span class="material-symbols-outlined">verified</span>
+              <span>Validación de colegiación oficial</span>
+            </div>
+          </article>
+
+          <article class="step-card">
+            <span class="step-card__number">03</span>
+            <div>
+              <div class="step-card__icon"><span class="material-symbols-outlined">folder_shared</span></div>
+              <h3 class="step-card__title">3. Gestión digital integral y cifrada</h3>
+              <p class="step-card__desc">Firme documentos digitalmente, coordine citas telemáticas o presenciales y
+                mantenga custodia de su expediente en un entorno cloud de máxima seguridad.</p>
+            </div>
+            <div class="step-card__footer">
+              <span class="material-symbols-outlined">shield</span>
+              <span>Cifrado SSL grado bancario</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DOBLE CTA ================= -->
+    <section class="section section--surface">
+      <div class="cta-grid">
+
+        <article class="cta-card cta-card--dark">
+          <div class="cta-card__body">
+            <span class="cta-card__eyebrow">Para Particulares y Empresas</span>
+            <h3 class="cta-card__title">¿Tiene una urgencia jurídica o un contrato pendiente de firma?</h3>
+            <p class="cta-card__desc">No asuma riesgos innecesarios. Nuestro equipo le asigna en minutos al letrado
+              colegiado más indicado con tarifa estipulada con total transparencia.</p>
+            <div class="cta-card__meta">
+              <span class="cta-card__meta-item">
+                <span class="material-symbols-outlined">timer</span>
+                <span>Respuesta en menos de 2h</span>
+              </span>
+              <span class="cta-card__meta-item">
+                <span class="material-symbols-outlined">lock</span>
+                <span>Protección RGPD</span>
+              </span>
+            </div>
+          </div>
+          <div class="cta-card__actions">
+            <a href="#" class="btn btn--tertiary">Solicitar Dictamen o Consulta</a>
+            <a href="#" class="btn btn--outline cta-card__btn-ghost">Planes Corporativos Mensuales</a>
+          </div>
+        </article>
+
+        <article class="cta-card cta-card--light">
+          <div class="cta-card__body">
+            <span class="cta-card__eyebrow">Colegios de Abogados &amp; Despachos</span>
+            <h3 class="cta-card__title">¿Es abogado colegiado? Digitalice y expanda su despacho</h3>
+            <p class="cta-card__desc">Únase a la infraestructura tecnológica líder en España. Reciba asuntos
+              precalificados, simplifique la facturación y gestione sus clientes con software homologado.</p>
+            <div class="cta-card__meta cta-card__meta--grid">
+              <span class="cta-card__meta-item">
+                <span class="material-symbols-outlined">verified_user</span>
+                <span>Validación de Cédula Colegial</span>
+              </span>
+              <span class="cta-card__meta-item">
+                <span class="material-symbols-outlined">payments</span>
+                <span>Cobros Seguros Garantizados</span>
+              </span>
+            </div>
+          </div>
+          <div class="cta-card__actions">
+            <a href="#" class="btn btn--primary">Postular mi Despacho a la Red</a>
+            <a href="#" class="btn btn--outline">Acceso a Plataforma Colegiada</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer site-footer--full">
+    <div class="site-footer__container">
+
+      <div class="site-footer__grid">
+
+        <div class="footer-brand">
+          <div class="footer-brand__logo-box">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeqL_MtsuVL0y_p1AMgaEK_fAF7w198yEwdBW6zcsNaHKF6auTI0MHLf74FGSznRBi6uygpHAuQ9xCDSb7yevj2owBWX107EFlk1WeKvdTEuUEMfOmdazjSiWqyKgTyyr0PCT4mRcBgxiw2eHGQ1Y2fkpZpJiX2nxfPrHhy7qTOPzwo7-0TfwSCnpNKpn9iPBoOZjDKIW-LFZIDfD2ADcACuQnZkHtmnGdEVffnz_2igycCFqUgUOH2uS9BnhiIEJKiw"
+              alt="LegalBridge" class="footer-brand__logo">
+          </div>
+          <p class="footer-brand__desc">Infraestructura tecnológica y red jurídica de élite para personas y
+            corporaciones. Conectamos rigor procesal con soluciones legales inmediatas y transparentes.</p>
+          <div class="footer-brand__badges">
+            <span class="footer-brand__badge">
+              <span class="material-symbols-outlined">encrypted</span>
+              <span>Cifrado SSL 256-Bit</span>
+            </span>
+            <span class="footer-brand__badge">
+              <span class="material-symbols-outlined">verified_user</span>
+              <span>Abogados Colegiados</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-column__title">Áreas de Práctica</h4>
+          <ul class="footer-column__list">
+            <li><a href="#">Derecho Mercantil &amp; M&amp;A</a></li>
+            <li><a href="#">Litigación &amp; Arbitraje</a></li>
+            <li><a href="#">Propiedad Intelectual y Tech</a></li>
+            <li><a href="#">Derecho Fiscal &amp; Tributario</a></li>
+            <li><a href="#">Compliance &amp; Penal Económico</a></li>
+            <li><a href="#">Derecho Laboral Corporativo</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-column__title">Servicios &amp; Clientes</h4>
+          <ul class="footer-column__list">
+            <li><a href="#">Consulta Inmediata</a></li>
+            <li><a href="#">Directorio de Letrados</a></li>
+            <li><a href="#">Suscripciones Pyme &amp; Enterprise</a></li>
+            <li><a href="#">Gestión Documental Segura</a></li>
+            <li><a href="#">Únete a la Red Jurídica</a></li>
+            <li><a href="#">Mapa Jurisdiccional</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-column__title">Boletín Jurídico</h4>
+          <p class="footer-newsletter__text">Análisis legislativos, sentencias de impacto y doctrina jurisprudencial
+            quincenal.</p>
+          <form class="footer-newsletter__form" id="newsletter-form" novalidate>
+            <input type="email" class="footer-newsletter__input" placeholder="correo@despacho.com"
+              aria-label="Correo electrónico para el boletín" required>
+            <button type="submit" class="footer-newsletter__btn">Suscribirme</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="site-footer__bottom">
+        <nav class="footer-legal" aria-label="Enlaces legales">
+          <a href="#">Aviso Legal</a>
+          <a href="#">Política de Privacidad (RGPD)</a>
+          <a href="#">Código Deontológico</a>
+          <a href="#">Política de Cookies</a>
+          <a href="#">Protocolo de Secreto Profesional</a>
+        </nav>
+        <div class="site-footer__copyright">© 2024 LegalBridge Technologies S.L. Todos los derechos reservados.</div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>
